@@ -33,12 +33,16 @@ fruits_with_more_than_5 = [i for i in fruits if len(i) > 5]
 fruits_with_exactly_5 = [i for i in fruits if len(i) == 5]
 
 # Exercise 7 - Make a list that contains fruits that have less than 5 characters
+fruits_with_less_than_5 = [i for i in fruits if len(i) < 5] 
 
 # Exercise 8 - Make a list containing the number of characters in each fruit. Output would be [5, 4, 10, etc... ]
+charlength_of_fruits = [ len(i) for i in fruits]
 
 # Exercise 9 - Make a variable named fruits_with_letter_a that contains a list of only the fruits that contain the letter "a"
+fruits_with_letter_a = [i for i in fruits if 'a' in i] 
 
 # Exercise 10 - Make a variable named even_numbers that holds only the even numbers 
+even_numbers = [i for i in numbers if i%2 == 0]
 
 # Exercise 11 - Make a variable named odd_numbers that holds only the odd numbers
 
