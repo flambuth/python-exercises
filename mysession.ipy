@@ -1,0 +1,351 @@
+# coding: utf-8
+len?
+2=7
+2+9
+"Go", "Away"
+"go" + " Away"
+"dont' your like double quotes"
+message = 'hello'
+message.upper()
+100*5+49+88
+637/7
+today = 'Friday'
+rid in today
+'rid' in today
+'ride' in today
+'da' in today
+bestday = 'friday'
+today == bestday
+today == bestday.upper()
+today == bestday.capitalize()
+blob = [1,6,99,202]
+5 in blob
+6 in blob
+fox in blob
+'fox' in blob
+blob.append('fox')
+'fox' in blob
+blob
+type math
+type(math)
+import math
+type(math)
+type(blob)
+type(blob[4])
+type(blob[3])
+total = 0
+total += 20
+total
+total -= 10
+total
+total *= 10
+total
+total /= 5
+total
+type(total)
+total = int(total)
+total
+type(total)
+5//2.0
+type(5//2.0)
+type(5//2)
+type(5%2.0)
+5%2.0
+25 ** 1/2
+25 ** (1/2)
+today
+f'It must be {today}!'
+f'It must be {bestday}!'
+f'It must be {bestday.upper()}!'
+f'It must be {bestday.capitalize)}!'
+f'It must be {bestday.capitalize())}!'
+f'It must be {bestday.capitalize()}!'
+today.count('y')
+today.count('z')
+blbo
+blob
+blob.split()
+today.split()
+fruits = ['apple', 'banana', 'cherry', 'durian']
+new_fruits = [i[0] == 'a' for i in fruits]
+new_fruits
+new_fruits = [i.append(' fruit') == 'a' for i in fruits]
+new_fruits = [i.capitalize() == 'a' for i in fruits]
+new_fruits
+new_fruits = [i.capitalize() for i in fruits]
+new_fruits
+fruits
+new_fruits = [i.capitalize() for i in fruits if i == 'Apple']
+fruits
+new_fruits
+new_fruits = [i.capitalize() for i in fruits if i == 'apple']
+new_fruits
+new_fruits = [i.capitalize() for i in fruits if i != 'apple']
+new_fruits
+new_fruits.sort(revers=True)
+sorted(new_fruits, reverse=True)
+letters = ['a','e','i','o','i']
+letters.append('z','x')
+letters.append('z')
+letters
+vowels = [i for i in letters if in ['a', 'e', 'i', 'o', 'i']]
+vowels = [i for i in letters if i in ['a', 'e', 'i', 'o', 'i']]
+vowels
+letters
+letters[4] = 'u'
+letters
+vowels = [i for i in letters if i in ['a', 'e', 'i', 'o', 'u']]
+vowels
+nutrional_facts = {}
+nutrional_facts{'calories':200}
+nutrional_facts['calories'] = 200
+nutrional_facts
+nutrional_facts['grams of sugar'] = 15
+nutrional_facts
+dict_from_list = [i for i in nutrional_facts]
+dict_from_list
+computer = {
+"RAM" = '8 GB',
+"DISK" = '1 TB',
+"PROC" = 'Motorola 8800'}
+computer = {
+"RAM" : '8 GB',
+"DISK" : '1 TB',
+"PROC" : 'Motorola 8800'}
+computer
+computer.values
+for i in computer.values
+specs = [i for i in computer.values]
+print(computer.values)
+computer2 = {
+"RAM" : '16 GB',
+"DISK" : '2 TB',
+"PROC" : 'Motorola 8800'}
+inventory = [computer, computer2]
+inventory
+inventory[0]['DISK']
+inventory[0]['RAM']
+type(0)
+type(True)
+type([{}])
+'1' + 2
+6 % 4
+type(type(6 % 4))
+'3 + 4 is ' + 3 + 4
+'3 + 4 is ' + str(3 + 4)
+'False' == False
+4 >= 0 and 1 !== '1'
+4 >= 0 and 1 != '1'
+6 % 3 == 0
+[1] + 2
+[1] + [2]
+blob
+blob + [7,10]
+blob += [8, 11]
+blob
+[1] * 2
+blob * 2
+[1] * [2]
+[] + [] == []
+{} + {}
+haul = [
+{
+'title' : 'the little mermaid',
+'duration' : 3
+},
+{
+'title' : 'hercules',
+'duration' : 1
+},
+{
+'title' : 'brother bear',
+'duration' : 5
+} ]
+haul
+price = 3
+haul[0]['duration'] * price
+haul[0] = {'price' : 3}
+haul
+haul.append({'title' : 'the little mermaid', 'duration': 3})
+haul
+haul[0] * haul[3]
+haul[0]['price'] * haul[3]['duration']
+username = 'codeup',
+password = 'notastrongpassword'
+username
+password
+username = 'codeup'
+username
+password
+five_char_test = len(password) > 4
+five_char_test
+below_20_char_test = len(username) < 21
+below_20_char_test
+pass_and_user_match_test = username != password
+pass_and_user_match_test
+no_whitespace_test_password = password[0] != ' ' && password[-1] != ' '  
+no_whitespace_test_password = password[0] != ' ' and password[-1] != ' '  
+no_whitespace_test_password
+no_whitespace_test_user = username[0] != ' ' and username[-1] != ' '  
+no_whitespace_test_user
+fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+fruits_with_more_than_5 = [i for i in fruits if len(i) > 5]
+fruits_with_more_than_5
+fruits_with_exactly_5 = [i for i in fruits if len(i) == 5]
+fruits_with_exactly_5
+fruits_with_less_than_5 = [i for i in fruits if len(i) < 5]
+fruits_with_less_than_5
+charlength_of_fruits = [ len(i) for i in fruits]
+charlength_of_fruits
+fruits_with_letter_a = [i for i in fruits if 'a' in i]
+fruits_with_letter_a
+numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 17, 19, 23, 256, -8, -4, -2, 5, -9]
+even_numbers = [i for i in numbers if i%2 == 0]
+even_numbers
+positive_numbers = [i for i in numbers if i/-1 == -1]
+positive_numbers
+numbers
+positive_numbers = [i for i in numbers if i + -i  == 0]
+positive_numbers
+positive_numbers = [i for i in numbers if i/-i == -i]
+positive_numbers
+positive_numbers = [i for i in numbers if i>0]
+positive_numbers
+22//10
+2//10
+two_or_more_numerals = [i for i in numbers if i//10>0]
+two_or_more_numerals
+numbers_squared = [i**i for i in numbers]
+numbers_squared
+numbers_squared = [i*i for i in numbers]
+numbers_squared
+odd_negative_numbers = [i for i in numbers if i>0 AND i%2=1]
+odd_negative_numbers = [i for i in numbers if i>0 AND if i%2=1]
+odd_negative_numbers = [i for i in numbers if i>0 if i%2=1]
+odd_negative_numbers = [i for i in numbers if i>0 if i%2==1]
+odd_negative_numbers
+odd_negative_numbers = [i for i in numbers if i<0 if i%2==1]
+odd_negative_numbers
+vowels = ['a','e','i','o','u']
+fruits_with_more_than_two_vowels = [i for i in fruits if i in vowels]
+fruits_with_more_than_two_vowels
+fruits_with_more_than_two_vowels = [i for i in fruits if i in vowels]
+for i in fruits
+for i in fruits:
+    print(i)
+    
+for i in fruits:
+    for j in i
+        print(j)
+
+    
+for i in fruits:
+    for j in i:
+        print(j)
+
+    
+for i in fruits:
+    for j in i:
+        print(j)
+
+    
+two_or_more_vowels = [[i for i in fruits] for j in vowels]
+two_or_more_vowels
+two_or_more_vowels = [[i for i in vowels] for j in vowels if i in j]
+two_or_more_vowels
+for i in fruits: 
+     ...:     for j in i: 
+     ...:           if j in vowels:
+                        print(j)
+                        
+vowels = [[v for v in vowels] in [i for i in fruits]] 
+vowels
+print([v for v in vowels])
+vowels
+vowels = [[v for v in 'aeiou'] in [i for i in fruits]] 
+vowels
+vowels = 'aeiou'
+for i in vowels:
+    print(i)
+    
+for i in fruits:
+    print(i)
+    
+for i in vowels:
+    for j in fruits:
+        if i in j:
+            print(j)
+            
+for i in vowels:
+    print(i)
+    for j in fruits:
+        if i in j:
+            print(j)
+            
+matrix = [[j for j in range(5)] for i in range(5)] 
+matrix
+matrix = [[j for j in range(7)] for i in range(5)] 
+matrix
+fruits[0][1]
+fruits[0]
+for i in fruits[0]:
+    print(i)
+    
+def Check_Vow(string, vowels): 
+    string = string.casefold() 
+    # Forms a dictionary with key as a vowel  and the value as 0 
+    count = {}.fromkeys(vowels, 0) 
+    # To count the vowels 
+    for character in string: 
+        if character in count: 
+            count[character] += 1    
+    return count 
+    
+Check_Vow('mango', 'aeiou')
+vowels
+Check_Vow('mango', vowels)
+def Check_Vow(string): 
+    vowels = 'aeiou'
+    string = string.casefold() 
+    # Forms a dictionary with key as a vowel  and the value as 0 
+    count = {}.fromkeys(vowels, 0) 
+    # To count the vowels 
+    for character in string: 
+        if character in count: 
+            count[character] += 1    
+    return count 
+    
+Check_Vow('mango')
+for i in fruits:
+    Check_Vow(i)
+    
+for i in fruits:
+    print(Check_Vow(i))
+    
+for i in fruits:
+    print(i)
+    print(Check_Vow(i))
+    
+vowels
+def Count_Any_Vowels(word):
+    vowels = 'aeiou'
+    count = 0
+    for i in word:
+        if i in vowels:
+            count += 1
+    return count
+    
+print(Count_Any_Vowels('mango'))
+test = [i for i in fruits if Count_Any_Vowels(i)>2]
+test
+fruits_with_only_two_vowels = [i for i in fruits if Count_Any_Vowels(i)==2]
+fruits_with_only_two_vowels
+import datetime
+x = datetime.date()
+x = datetime.datetime.now()
+x
+print(x)
+type(x)
+now()
+datetime.time.now()
+%save -r mysession 1-999999
