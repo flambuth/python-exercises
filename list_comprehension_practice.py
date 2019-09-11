@@ -33,6 +33,10 @@ fruits_with_more_than_two_vowels = [i for i in fruits if Count_Any_Vowels(i)>2]
 # be ['mango', 'kiwi', 'strawberry']
 fruits_with_only_two_vowels = [i for i in fruits if Count_Any_Vowels(i)==2]
 
+#### How to do it all in one list comprehension. The count method for strings is new to me
+
+# x = [i for i in fruits if (i.count('a') +i.count('e') +i.count('i') +i.count('o') +i.count('u'))>2]
+#####
 
 # Exercise 5 - make a list that contains each fruit with more than 5 characters
 fruits_with_more_than_5 = [i for i in fruits if len(i) > 5]
