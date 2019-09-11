@@ -45,12 +45,17 @@ fruits_with_letter_a = [i for i in fruits if 'a' in i]
 even_numbers = [i for i in numbers if i%2 == 0]
 
 # Exercise 11 - Make a variable named odd_numbers that holds only the odd numbers
+odd_numbers = [i for i in numbers if i%2 == 1]
 
 # Exercise 12 - Make a variable named positive_numbers that holds only the positive numbers
+positive_numbers = [i for i in numbers if i>0] 
 
 # Exercise 13 - Make a variable named negative_numbers that holds only the negative numbers
+negative_numbers = [i for i in numbers if i<0]
 
-# Exercise 14 - use a list comprehension w/ a conditional in order to produce a list of numbers with 2 or more numerals
+# Exercise 14 - use a list comprehension w/ a conditional in order to produce a list of 
+# numbers with 2 or more numerals
+two_or_more_numerals = [i for i in numbers if ]
 
 # Exercise 15 - Make a variable named numbers_squared that contains the numbers list with each element squared. Output is [4, 9, 16, etc...]
 
