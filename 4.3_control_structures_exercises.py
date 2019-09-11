@@ -39,7 +39,41 @@ while i <= 14:
     i += 1
     print(i)
 # Create a while loop that will count by 2's starting with 0 and ending at 100. Follow each number with a new line.
+x = 0 
+while x < 100: 
+    x += 2 
+    print(str(x)+"\n")
 
 # Alter your loop to count backwards by 5's from 100 to -10.
+x = 100 
+while x > -10: 
+    x -= 5 
+    print(str(x)+"\n")
 
-# Create a while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000. 
+# Create a while loop that starts at 2, and displays the number squared on each line while the number is 
+# less than 1,000,000. 
+x = 2 
+while x < 1000000: 
+    x = x ** 2 
+    print(str(x)+"\n")
+
+# Write a loop that uses print to create the output shown below.
+x = 100
+print(x)
+while x > 5:
+    x -= 5
+    print(x)
+
+# 3 FOR LOOPS
+# Write some code that prompts the user for a number, then shows a multiplication table up through 10 for that number.
+z = int(input('Please enter a number: '))
+count = 1
+for i in range(1,11):
+    print(str(z) + ' x ' + str(count) + ' = ' + str(z*count))
+    count += 1
+
+# Create a for loop that uses print to create the output shown below.
+#1
+#22
+#333
+q = int(input('Please input a number: '))
