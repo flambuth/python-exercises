@@ -19,10 +19,16 @@ print(capitalized_fruits)
 # Exercise 3 - Use a list comprehension to make a variable named 
 # fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something 
 # is a vowel.
-vowels = ['a','e','i','o','u']
-fruits_with_more_than_two_vowels = [i for i in fruits if i in vowels]
+vowels = 'aeiou'
+# This is a for-loop that prints out the vowel, followed by the fruits that contain that
+# vowel
+for i in vowels: 
+     ...:     print(i) 
+     ...:     for j in fruits: 
+     ...:         if i in j: 
+     ...:             print(j)
 
-print(fruits_with_more_than_two_vowels)
+
 
 # Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should be ['mango', 'kiwi', 'strawberry']
 
@@ -55,10 +61,16 @@ negative_numbers = [i for i in numbers if i<0]
 
 # Exercise 14 - use a list comprehension w/ a conditional in order to produce a list of 
 # numbers with 2 or more numerals
-two_or_more_numerals = [i for i in numbers if ]
+two_or_more_numerals = [i for i in numbers if i//10>0]
 
-# Exercise 15 - Make a variable named numbers_squared that contains the numbers list with each element squared. Output is [4, 9, 16, etc...]
+# Exercise 15 - Make a variable named numbers_squared that contains the numbers list 
+# with each element squared. Output is [4, 9, 16, etc...]
+numbers_squared = [i*i for i in numbers]
 
-# Exercise 16 - Make a variable named odd_negative_numbers that contains only the numbers that are both odd and negative.
+# Exercise 16 - Make a variable named odd_negative_numbers that contains only the 
+# numbers that are both odd and negative.
+odd_negative_numbers = [i for i in numbers if i<0 if i%2==1]
 
-# Exercise 17 - Make a variable named numbers_plus_5. In it, return a list containing each number plus five. 
+# Exercise 17 - Make a variable named numbers_plus_5. In it, return a list containing 
+# each number plus five. 
+numbers_plus_5 = [i=5 for i in numbers]
