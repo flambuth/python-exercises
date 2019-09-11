@@ -19,18 +19,20 @@ print(capitalized_fruits)
 # Exercise 3 - Use a list comprehension to make a variable named 
 # fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something 
 # is a vowel.
-vowels = 'aeiou'
-# This is a for-loop that prints out the vowel, followed by the fruits that contain that
-# vowel
-for i in vowels: 
-     ...:     print(i) 
-     ...:     for j in fruits: 
-     ...:         if i in j: 
-     ...:             print(j)
+def Count_Any_Vowels(word): 
+     ...:     vowels = 'aeiou' 
+     ...:     count = 0 
+     ...:     for i in word: 
+     ...:         if i in vowels: 
+     ...:             count += 1 
+     ...:     return count 
 
+fruits_with_more_than_two_vowels = [i for i in fruits if Count_Any_Vowels(i)>2]
 
+# Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should 
+# be ['mango', 'kiwi', 'strawberry']
+fruits_with_only_two_vowels = [i for i in fruits if Count_Any_Vowels(i)==2]
 
-# Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should be ['mango', 'kiwi', 'strawberry']
 
 # Exercise 5 - make a list that contains each fruit with more than 5 characters
 fruits_with_more_than_5 = [i for i in fruits if len(i) > 5]
