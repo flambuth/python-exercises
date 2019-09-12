@@ -157,7 +157,7 @@ while ok2launch:
     for i in range(user_integer):
         print(f"{i}----- | {i * i}-----  | {i**3}")
     life_up = input("Do you want to continue")
-    if life_up == "y" or life_up == "Y":
+    if life_up.lower == "y" or life_up.lower == "yes":
         continue
     else:
         break
@@ -180,8 +180,13 @@ def numbers_into_grade_letter(number):
         print('You failed.')
 
 player_score = int(input("What was your numerical score? "))
-numbers_into_grade_letter(player_score) 
-
+while player_score:
+    numbers_into_grade_letter(player_score) 
+    exit_clause = input("Do you wanna continue? ")
+    if exit_clause.lower ==  "y" or life_up.lower == "yes":
+        continue
+    else:
+        break
 #    player_continue = input("Do you want to go again? ")
 #    if player_continue "y" or life_up == "Y":
 #        numbers_into_grade_letter
