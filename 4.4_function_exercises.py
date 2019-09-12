@@ -104,3 +104,10 @@ def makes_a_cumulative_list(*args):
             cum_list.append(i+count) 
             count = i+count 
     return cum_list
+
+#bonus
+# convert a hour:min[am|pm] time into 24 hour format
+def twelve_to_24hrs(old_time):
+    old_time = old_time[0:-2]
+    return old_time
+    
