@@ -113,3 +113,23 @@ while good_to_go:
         for i in range(int(player_number)+1):
             print(i)
         break
+
+# Write a program that prompts the user for a positive integer. Next write a loop that prints out 
+# the numbers from the number the user entered down to 1.
+player_number = input('Please enter a number: ')
+if player_number.isdigit() == False:
+    print("Not a number")
+elif int(player_number) < 0:
+    print("Thats not a positive number")
+else:
+    for i in range(int(player_number),1):
+        print(i)    
+
+# Write a program that prints the numbers from 1 to 100.
+# For multiples of three print "Fizz" instead of the number
+# For the multiples of five print "Buzz".
+# For numbers which are multiples of both three and five print "FizzBuzz".
+
+while good2go == True:
+    for i in range(100)
+        if i 
