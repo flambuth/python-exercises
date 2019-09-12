@@ -88,3 +88,23 @@ for i in range(1,int(q)+1):
 #    Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number 
 #    the user entered.
 
+ready2play = input("Do you want to play? ")
+if ready2play == "y" or ready2play == "Y":
+    user_odd_number=int(input("Please enter an odd number between 1 and 50: "))
+    
+    print(f"Number being skiped is: {user_odd_number}" )
+    for i in range(user_odd_number):
+        print(f"Here is an odd number: {i}")
+        if i == user_odd_number:
+            continue
+        print("This got skipped")
+
+ready2play = input("Do you want to play? ") 
+     ...: if ready2play == "y" or ready2play == "Y": 
+     ...:     user_odd_number=int(input("Please enter an odd number between 1 and 50: ")) 
+     ...:     print(f"Number being skiped is: {user_odd_number}" ) 
+     ...:     for i in range(1,50,2): 
+     ...:         if i==user_odd_number: 
+     ...:             print("this got skipped") 
+     ...:             continue 
+     ...:         print(f"Here is an odd number: {i}")
