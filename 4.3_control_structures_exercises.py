@@ -154,4 +154,48 @@ while ok2launch:
     print("------ | ------  | -----")
     for i in range(user_integer):
         print(f"{i}----- | {i * i}-----  | {i**3}")
-    break
+    life_up = input("Do you want to continue")
+        if life_up == "y" or life_up == "Y":
+            #I should make this a function and recursively call it here.
+        else:
+            break
+
+# Convert given number grades into letter grades.
+
+#    Prompt the user for a numerical grade from 0 to 100.
+ #   Display the corresponding letter grade.
+  #  Prompt the user to continue.
+   # Assume that the user will enter valid integers for the grades.
+    #The application should only continue if the user agrees to.
+
+def numbers_into_grade_letter(number):
+    number = int(number)
+    if number => 90:
+        print('A')
+    elif number >80 and number<90:
+        print('B')
+    else:
+        print('You failed.')
+
+player_score = int(input("What was your numerical score? "))
+numbers_into_grade_letter(player_score) 
+
+#    player_continue = input("Do you want to go again? ")
+#    if player_continue "y" or life_up == "Y":
+#        numbers_into_grade_letter
+
+# 6
+#Create a list of dictionaries where each dictionary represents a book that you 
+# have read. Each dictionary in the list should have the keys title, author, and 
+# genre. Loop through the list and print out information about each book.
+
+books = [
+        {'title':'Bible', 'author':'Moses', 'genre':'motivational'},
+        {'title':'Gilgamish', 'author':'Enkidu', 'genre':'action'},
+        {'title':'Aenid', 'author':'Virgil', 'genre':'roman'}
+]
+
+for i in books:
+    print(f"title: {i['title']}")
+    print(f"author: {i['author']}")
+    print(f"genre: {i['genre']}\n")
