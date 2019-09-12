@@ -139,3 +139,19 @@ for i in range(1,100):
         print('Buzz')
     else:
         print(i)
+
+# Display a table of powers.
+
+#    Prompt the user to enter an integer.
+#    Display a table of squares and cubes from 1 to the value entered.
+#    Ask if the user wants to continue.
+#    Assume that the user will enter valid data.
+#    Only continue if the user agrees to.
+ok2launch == True
+while ok2launch:
+    user_integer = int(input("Please enter a valid integer: "))
+    print("number | squared | cubed")
+    print("------ | ------  | -----")
+    for i in range(user_integer):
+        print(f"{i}----- | {i * i}-----  | {i**3}")
+    break
