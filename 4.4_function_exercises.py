@@ -66,8 +66,23 @@ def remove_vowels(phrase):
 # Write a function named cumsum that accepts a list of numbers and returns a list that is the cumulative 
 # sum of the numbers in the list.
 #This is the cheap version using an import. I get the feeling kwargs or args was what y'all had in mind
+#That way the function can take a bunch of integer arguments instead one list
 
 from itertools import accumulate
 
 def cumsum(seq_of_numbers):
     return list(accumulate(seq_of_numbers))
+
+#Now without importing some functions
+def count_the_args(*args): 
+     ...:     count = 0 
+     ...:     cum_list = [] 
+     ...:     for i in args: 
+     ...:         if count == 0: 
+     ...:             cum_list.append(i) 
+     ...:             count = i 
+     ...:         else: 
+     ...:             cum_list.append(i+count) 
+     ...:             count = i+count 
+     ...:     return cum_list     
+     
