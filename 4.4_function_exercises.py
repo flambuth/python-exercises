@@ -27,14 +27,27 @@ def capitalize_if_start_with_cons(word):
 #5
 # Define a function named calculate_tip. It should accept a tip percentage (a number between 0 and 1) and the bill total, 
 # and return the amount to tip.
+def calculate_tip(bill, percentage):
+    return bill * percentage
+
 #6
 # Define a function named apply_discount. It should accept a original price, and a discount percentage, and return the price 
 # after the discount is applied.
+def apply_discount(price, discount):
+    return price - price*discount
+
 #7
 # Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and 
 # return a number as output.
+def handle_commas(phrase):
+    commas = [i for i in phrase if i==',']
+    return len(commas)
+
 #8
 # Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that 
 # number (A-F).
+def get_letter_grade(score):
+    
+
 #9
 # Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
