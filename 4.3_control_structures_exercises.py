@@ -14,7 +14,7 @@ user_day = input('Please enter the day of the week ')
 if days_of_the_week.index(user_day.capitalize()) == 0 or days_of_the_week.index(user_day.capitalize()) == 6:
     print('It is the weekend')
 else:
-    print('Nest pas the weekend')
+    print("N'est pas the weekend")
 
 # 1C
 # create variables and make up values for
@@ -183,7 +183,7 @@ player_score = int(input("What was your numerical score? "))
 while player_score:
     numbers_into_grade_letter(player_score) 
     exit_clause = input("Do you wanna continue? ")
-    if exit_clause.lower ==  "y" or life_up.lower == "yes":
+    if exit_clause.lower ==  "y" or exit_clause.lower == "yes":
         continue
     else:
         break
