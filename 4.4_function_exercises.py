@@ -47,7 +47,27 @@ def handle_commas(phrase):
 # Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that 
 # number (A-F).
 def get_letter_grade(score):
-    
+
 
 #9
 # Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
+def remove_vowels(phrase):
+    no_vowels = [i for i in phrase if i.lower() not in 'aeiou']
+    return ''.join(no_vowels)
+
+#10
+# Define a function named normalize_name. It should accept a string and return a valid python identifier, that is:
+#    anything that is not a valid python identifier should be removed
+#    leading and trailing whitespace should be removed
+#    everything should be lowercase
+#    spaces should be replaced with underscores
+
+#11
+# Write a function named cumsum that accepts a list of numbers and returns a list that is the cumulative 
+# sum of the numbers in the list.
+#This is the cheap version using an import. I get the feeling kwargs or args was what y'all had in mind
+
+from itertools import accumulate
+
+def cumsum(seq_of_numbers):
+    return list(accumulate(seq_of_numbers))
