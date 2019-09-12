@@ -71,8 +71,9 @@ def remove_vowels(phrase):
 #    everything should be lowercase
 #    spaces should be replaced with underscores
 
-#I dont know why the replace method gets ignored. Oh.
 def normalize_name(phrase): 
+    if phrase[0].isalpha() == False:
+        print ("You need the first character to be a letter")
     phrase = phrase.strip() 
     phrase.replace(" ","_") 
     phrase = phrase.lower() 
