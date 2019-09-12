@@ -46,7 +46,16 @@ def handle_commas(phrase):
 #8
 # Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that 
 # number (A-F).
-def get_letter_grade(score):
+def numbers_into_grade_letter(number):
+    number = int(number)
+    if number => 90:
+        print('A')
+    elif number >80 and number<90:
+        print('B')
+    elif number >70 and number<80:
+        print('C')
+    else:
+        print('You failed.')
 
 
 #9
@@ -74,15 +83,15 @@ def cumsum(seq_of_numbers):
     return list(accumulate(seq_of_numbers))
 
 #Now without importing some functions
-def count_the_args(*args): 
-     ...:     count = 0 
-     ...:     cum_list = [] 
-     ...:     for i in args: 
-     ...:         if count == 0: 
-     ...:             cum_list.append(i) 
-     ...:             count = i 
-     ...:         else: 
-     ...:             cum_list.append(i+count) 
-     ...:             count = i+count 
-     ...:     return cum_list     
-     
+def makes_a_cumulative_list(*args):
+    """ Returns a list that is the cumulative sum of the sequence of intengers passed as arguments """ 
+    count = 0 
+    cum_list = [] 
+    for i in args: 
+        if count == 0: 
+            cum_list.append(i) 
+            count = i 
+        else:
+            cum_list.append(i+count) 
+            count = i+count 
+    return cum_list
