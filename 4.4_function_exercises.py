@@ -71,6 +71,14 @@ def remove_vowels(phrase):
 #    everything should be lowercase
 #    spaces should be replaced with underscores
 
+#I dont know why the replace method gets ignored. Oh.
+def normalize_name(phrase): 
+    phrase = phrase.strip() 
+    phrase.replace(" ","_") 
+    phrase = phrase.lower() 
+    return phrase 
+
+
 #11
 # Write a function named cumsum that accepts a list of numbers and returns a list that is the cumulative 
 # sum of the numbers in the list.
