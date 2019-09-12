@@ -88,17 +88,6 @@ for i in range(1,int(q)+1):
 #    Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number 
 #    the user entered.
 
-ready2play = input("Do you want to play? ")
-if ready2play == "y" or ready2play == "Y":
-    user_odd_number=int(input("Please enter an odd number between 1 and 50: "))
-    
-    print(f"Number being skiped is: {user_odd_number}" )
-    for i in range(user_odd_number):
-        print(f"Here is an odd number: {i}")
-        if i == user_odd_number:
-            continue
-        print("This got skipped")
-
 ready2play = input("Do you want to play? ") 
      ...: if ready2play == "y" or ready2play == "Y": 
      ...:     user_odd_number=int(input("Please enter an odd number between 1 and 50: ")) 
@@ -108,3 +97,19 @@ ready2play = input("Do you want to play? ")
      ...:             print("this got skipped") 
      ...:             continue 
      ...:         print(f"Here is an odd number: {i}")
+
+#The input function can be used to prompt for input and use that input in your python code. 
+# Prompt the user to enter a positive number and write a loop that counts from 0 to that number. 
+# (Hints: first make sure that the value the user entered is a valid number, also note that the 
+# input function returns a string, so you'll need to convert this to a numeric type.)
+
+good_to_go = True
+while good_to_go:
+    player_number = input('Please enter a number: ')
+    if player_number.isdigit() == False:
+        print("That is not a number. ")
+        good_to_go = False
+    else:
+        for i in range(int(player_number)+1):
+            print(i)
+        break
