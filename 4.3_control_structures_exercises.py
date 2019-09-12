@@ -125,6 +125,7 @@ else:
     for i in range(int(player_number),1):
         print(i)    
 
+# 3
 # Write a program that prints the numbers from 1 to 100.
 # For multiples of three print "Fizz" instead of the number
 # For the multiples of five print "Buzz".
@@ -140,6 +141,7 @@ for i in range(1,100):
     else:
         print(i)
 
+# 4
 # Display a table of powers.
 
 #    Prompt the user to enter an integer.
@@ -155,10 +157,10 @@ while ok2launch:
     for i in range(user_integer):
         print(f"{i}----- | {i * i}-----  | {i**3}")
     life_up = input("Do you want to continue")
-        if life_up == "y" or life_up == "Y":
-            #I should make this a function and recursively call it here.
-        else:
-            break
+    if life_up == "y" or life_up == "Y":
+        continue
+    else:
+        break
 
 # Convert given number grades into letter grades.
 
