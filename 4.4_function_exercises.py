@@ -9,7 +9,7 @@ def is_two(number):
 #2
 # Define a function named is_vowel. It should return True if the passed string is a vowel, False otherwise.
 def is_vowel(char):
-    return char.lower() in 'aeiou'
+    return len(char) == 1 and char.lower() in 'aeiou' 
 
 #3
 # Define a function named is_consonant. It should return True if the passed string is a consonant, False otherwise. 
@@ -158,9 +158,18 @@ def right_now_in_24hr():
 #using fstrings to format these non-strings into some string output
     return f"It is {hour}{mins} hours"
 
+
+
+######################
 #Create a function named col_index. It should accept a spreadsheet 
 # column name, and return the index number of the column.
 
 # def col_index(spreadsheet column name):
 # command shift is a godsend. i wish i learned it sooner.
 #     return index number of he column
+
+# I think i'll do my work on this bonus question somewhere else
+# It invovles importing pandas and so far some stuff that takes
+# my old mac some time to process. 
+
+# I went with using openpyxl instead as the module for loading excel workboks
