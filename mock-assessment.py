@@ -5,6 +5,10 @@ def normalize_name(phrase):
 
     >>> normalize_name('Name')
     'name'
+    >>> normalize_name('First Name  ')
+    'first_name'
+    >>> normalize_name('% Completed')
+    'completed'
 
     ''' 
     if phrase[0].isalpha() == False:
@@ -17,7 +21,14 @@ def normalize_name(phrase):
 # python -m´ doctest mock-assessment.txt
 
 def cumsum(*args):
-    """ Returns a list that is the cumulative sum of the sequence of intengers passed as arguments """ 
+    ''' 
+    Returns a list that is the cumulative sum of the sequence of intengers passed as arguments 
+    >>> cumsum(1, 1, 1)
+    [1, 2, 3]
+    >>> cumsum(1, 2, 3, 4)
+    [1, 3, 6, 10]
+    
+    ''' 
     count = 0 
     cum_list = [] 
     for i in args: 
