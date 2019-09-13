@@ -83,11 +83,12 @@ def remove_vowels(phrase):
 #    everything should be lowercase
 #    spaces should be replaced with underscores
 
+#This one passes all the docstring tests in the mock-assessment given by Zach on Friday
 def normalize_name(phrase): 
     if phrase[0].isalpha() == False:
-        print ("You need the first character to be a letter")
+        phrase = phrase[1:]
     phrase = phrase.strip() 
-    phrase.replace(" ","_") 
+    phrase = phrase.replace(" ","_") 
     phrase = phrase.lower() 
     return phrase 
 
