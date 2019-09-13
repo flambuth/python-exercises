@@ -57,13 +57,14 @@ def numbers_into_grade_letter(number):
     else:
         print('You failed.')
 
-
+#################
 #9
 # Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
 def remove_vowels(phrase):
     no_vowels = [i for i in phrase if i.lower() not in 'aeiou']
     return ''.join(no_vowels)
 
+####################
 #10
 # Define a function named normalize_name. It should accept a string and return a valid python identifier, that is:
 #    anything that is not a valid python identifier should be removed
@@ -79,7 +80,7 @@ def normalize_name(phrase):
     phrase = phrase.lower() 
     return phrase 
 
-
+#####################
 #11
 # Write a function named cumsum that accepts a list of numbers and returns a list that is the cumulative 
 # sum of the numbers in the list.
@@ -108,7 +109,14 @@ def makes_a_cumulative_list(*args):
             count = i+count 
     return cum_list
 
-#bonus
+
+
+
+
+#################
+#bonus 1
+
+
 # convert a hour:min[am|pm] time into 24 hour format
 def twelve_to_24hrs(old_time):
     old_time = old_time[0:-2]
@@ -140,8 +148,19 @@ def twenty4_to_twelve(time):
         x = datetime.
 
 def right_now_in_24hr():
-import datetime
+    import datetime
+#make a datetime object and cut out the hour and minutes using the string
+#formatting method the object has. Using a %to indicate what to slice
+#that method will not take more than 1 argument
     x = datetime.datetime.now()
     hour = x.strftime("%H")
     mins = x.strftime("%M")
-    return f"{hour}{mins} hours"
+#using fstrings to format these non-strings into some string output
+    return f"It is {hour}{mins} hours"
+
+#Create a function named col_index. It should accept a spreadsheet 
+# column name, and return the index number of the column.
+
+def col_index(spreadsheet column name):
+
+    return index number of he column
