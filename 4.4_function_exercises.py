@@ -44,9 +44,15 @@ def apply_discount(price, discount):
 #7
 # Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and 
 # return a number as output.
-def handle_commas(phrase):
-    commas = [i for i in phrase if i==',']
-    return len(commas)
+# def handle_commas_my_way(phrase):
+#     commas = [i for i in phrase if i==',']
+#     return len(commas)
+
+def handle_commas(s):
+    no_commas = [i for i in s if i!=',']
+    return float("".join(no_commas))
+
+assert handle_commas('1,000') == 1000
 
 #8
 # Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that 
