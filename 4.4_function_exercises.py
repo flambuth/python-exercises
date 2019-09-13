@@ -110,4 +110,18 @@ def makes_a_cumulative_list(*args):
 def twelve_to_24hrs(old_time):
     old_time = old_time[0:-2]
     return old_time
-    
+
+#This is starting to get very clumsy
+
+#good enough for me
+def twelve_to_24(time): 
+    ...:     phase = time[-2:] 
+    ...:     hour = time[:2] 
+    ...:     mins = time[3:5] 
+    ...:     if phase == 'pm': 
+    ...:         hour = str(int(hour)+12) 
+    ...:         return hour + mins 
+    ...:     else: 
+    ...:         return hour + mins
+
+#convert military to am/pm time
