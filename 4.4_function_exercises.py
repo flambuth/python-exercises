@@ -99,13 +99,13 @@ def normalize_name(phrase):
 #This is the cheap version using an import. I get the feeling kwargs or args was what y'all had in mind
 #That way the function can take a bunch of integer arguments instead one list
 
-from itertools import accumulate
+# from itertools import accumulate
 
-def cumsum(seq_of_numbers):
-    return list(accumulate(seq_of_numbers))
+# def cumsum(seq_of_numbers):
+#     return list(accumulate(seq_of_numbers))
 
 #Now without importing some functions
-def makes_a_cumulative_list(*args):
+def cumsum(*args):
     """ Returns a list that is the cumulative sum of the sequence of intengers passed as arguments """ 
     count = 0 
     cum_list = [] 
