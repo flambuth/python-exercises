@@ -24,10 +24,15 @@ def capitalize_if_start_with_cons(word):
     if word[0] not in 'aeiou':
         return word.capitalize()
 
+# The streamlined version
+def capitalize_if_start_with_cons(word):
+    return word.capitalize() if is_consonant(word[0]) else word
+
 #5
 # Define a function named calculate_tip. It should accept a tip percentage (a number between 0 and 1) and the bill total, 
 # and return the amount to tip.
-def calculate_tip(bill, percentage):
+# I added a default value tip of 10 percent
+def calculate_tip(bill, percentage = .1):
     return bill * percentage
 
 #6
