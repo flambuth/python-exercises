@@ -1,4 +1,12 @@
 def normalize_name(phrase): 
+    '''
+    This is the documentation for this function. This function will accept a string and
+    return the string in a form that is more palatable to the Python interpreter 
+
+    >>> normalize_name('Name')
+    'name'
+
+    ''' 
     if phrase[0].isalpha() == False:
         phrase = phrase[1:]
     phrase = phrase.strip() 

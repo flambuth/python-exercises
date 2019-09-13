@@ -105,6 +105,8 @@ def normalize_name(phrase):
 #     return list(accumulate(seq_of_numbers))
 
 #Now without importing some functions
+#This will not pass the requirements of the doctests. I made this to take in an
+#indefinite amount of integers as arguments rather than a list of integers
 def cumsum(*args):
     """ Returns a list that is the cumulative sum of the sequence of intengers passed as arguments """ 
     count = 0 
