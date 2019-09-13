@@ -97,9 +97,12 @@ def makes_a_cumulative_list(*args):
     count = 0 
     cum_list = [] 
     for i in args: 
+    #This is the starting condition. The rules change after the first argument is cemented at index 0
         if count == 0: 
             cum_list.append(i) 
             count = i 
+    #Add to the list that will be returned the sum of next argument and the last one, stored in count 
+    #and becomes the new count for the next round of the iteration
         else:
             cum_list.append(i+count) 
             count = i+count 
@@ -111,9 +114,9 @@ def twelve_to_24hrs(old_time):
     old_time = old_time[0:-2]
     return old_time
 
-#This is starting to get very clumsy
+#  ^ This is starting to get very clumsy
 
-#good enough for me
+#good enough for me, but feels not efficient
 def twelve_to_24(time): 
     ...:     phase = time[-2:] 
     ...:     hour = time[:2] 
@@ -125,3 +128,20 @@ def twelve_to_24(time):
     ...:         return hour + mins
 
 #convert military to am/pm time
+#gonna use the datetime module to do it cleaner
+# make a date time object
+# x = datetime.datetime(2020, 5, 17)
+
+def twenty4_to_twelve(time):
+#initial test to make sure the time is at least a number
+    if time.isdigit() == False:
+        return "That is not a valid time."
+    else:
+        x = datetime.
+
+def right_now_in_24hr():
+import datetime
+    x = datetime.datetime.now()
+    hour = x.strftime("%H")
+    mins = x.strftime("%M")
+    return f"{hour}{mins} hours"
