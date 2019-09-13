@@ -161,6 +161,6 @@ def right_now_in_24hr():
 #Create a function named col_index. It should accept a spreadsheet 
 # column name, and return the index number of the column.
 
-def col_index(spreadsheet column name):
-
-    return index number of he column
+# def col_index(spreadsheet column name):
+# command shift is a godsend. i wish i learned it sooner.
+#     return index number of he column
