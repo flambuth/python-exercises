@@ -26,26 +26,28 @@ def create_new_user(name, balance):
 
 ######################
 #######The main script starts below
+choice = 0
+while choice != 4:
+    user = input("Please enter your username: ")
+    if check_user(user,known_users) == False:
+        new_balance = str(input("You are a new user. What is your expected account balance? "))
+        create_new_user(user, new_balance)
 
-user = input("Please enter your username: ")
-if check_user(user,known_users) == False:
-    new_balance = str(input("You are a new user. What is your expected account balance? "))
-    create_new_user(user, new_balance)
+    else:
+        print(f"Welcome to your checkbook application, {user}!")
 
-else:
-    print(f"Welcome to your checkbook application, {user}!")
+    print("1) View Current Balance")
+    print("2) Make New Debit (withdraw)")
+    print("3) Make New Credit (deposit)")
+    print("4) Exit")
 
-    choice = 0
-
-    while choice != 4:
-        print("1) View Current Balance")
-        print("2) Make New Debit (withdraw)")
-        print("3) Make New Credit (deposit)")
-        print("4) Exit")
-
-        choice = input("What would you like to do? ")
-        if choice == '4':
-            break
+    choice = input("What would you like to do? ")
+    
+    if choice == '1':
+        print([i['balance'] for i in known_users if i['name'] == user])
+        continue
+    if choice == '4':
+        break
         # if choice == '4':
         # print("good bye")
 
