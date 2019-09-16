@@ -8,3 +8,10 @@
 # import the module and refer to the function with the . syntax
 # use from to import the function directly
 # use from and give the function a different name
+
+import functions_exercise
+
+import functions_exercise as fe
+
+from functions_exercise import cumsum
+
