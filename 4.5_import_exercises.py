@@ -33,3 +33,20 @@ import json
 
 with open("profiles.json", "r") as read_file:
     data = json.load(read_file)
+
+#find Total number of users
+def find_total_users(data):
+    total_users = len(i for i in data)
+    return total_users
+
+# Number of active users
+
+
+# Number of inactive users
+# Grand total of balances for all users
+# Average balance per user
+# User with the lowest balance
+# User with the highest balance
+# Most common favorite fruit
+# Least most common favorite fruit
+# Total number of unread messages for all users
