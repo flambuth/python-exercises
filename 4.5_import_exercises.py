@@ -40,12 +40,36 @@ def find_total_users(data):
     return total_users
 
 # Number of active users
-
+def find_active_users(data):
+    active_users = len([i for i in data if i["isActive"] == True])
+    return active_users
 
 # Number of inactive users
+def find_inactive_users(data):
+    active_users = len([i for i in data if i["isActive"] == False])
+    return active_users
+
 # Grand total of balances for all users
+def find_sum_of_user_balances(data):
+    x = [i['balance'] for i in data]
+
 # Average balance per user
+#This strips off the commas betweeen 3 digits and gets rid of the $
+#Then i can add the floats
+def convert_dollar_to_float(dollars):
+    s = ''
+    new_dollars = [i for i in dollars if i!= ',']
+    s = s.join(new_dollars[1:])
+    return float(s)
+
+def find_sum_of_balances(data):
+    x = [i['balance'] for i in data]
+    sum_of_balances = sum(list(map(convert_dollar_to_float, x)))
+    return sum_of_balances
+
 # User with the lowest balance
+def user_with_lowest(data):
+    
 # User with the highest balance
 # Most common favorite fruit
 # Least most common favorite fruit
