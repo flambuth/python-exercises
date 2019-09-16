@@ -13,23 +13,39 @@ import checkbook_functions
 known_users = [
 {'name':'aone', 'balance':1000}    
 ]
+def check_user(user, user_list):
+    user_names = [i['name'] for i in user_list]
+    return user in user_names
+
+def create_new_user(name, balance):
+    known_users.append(
+        {'name':name,
+         'balance': balance
+        }
+    )
+
+######################
+#######The main script starts below
+
 user = input("Please enter your username: ")
-check_user(user,known_users)
+if check_user(user,known_users) == False:
+    new_balance = str(input("You are a new user. What is your expected account balance? "))
+    create_new_user(user, new_balance)
 
+else:
+    print(f"Welcome to your checkbook application, {user}!")
 
-print(f"Welcome to your checkbook application, {user}!")
+    choice = 0
 
-choice = 0
+    while choice != 4:
+        print("1) View Current Balance")
+        print("2) Make New Debit (withdraw)")
+        print("3) Make New Credit (deposit)")
+        print("4) Exit")
 
-while choice != 4:
-    print("1) View Current Balance")
-    print("2) Make New Debit (withdraw)")
-    print("3) Make New Credit (deposit)")
-    print("4) Exit")
-
-    choice = input("What would you like to do? ")
-    if choice == '4':
-        break
+        choice = input("What would you like to do? ")
+        if choice == '4':
+            break
         # if choice == '4':
         # print("good bye")
 
