@@ -131,3 +131,8 @@ fruit_loser = min(fruit_count.items())
 #^I did that. How'd i forget? either wway its in line 122. i couldve put 122 and 123 together
 
 # Total number of unread messages for all users
+def extract_digits(s): 
+    return "".join([c for c in s if c.isdigit()]) 
+
+user_messages = [int(extract_digits(i['greeting'])) for i in data]
+sum(user_messages)
