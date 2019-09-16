@@ -8,10 +8,27 @@
 #gonna need to make persistent saves to disk
 import os
 
+#Will save to a file per each user
+known_users = []
 user = input("Please enter your username: ")
+if user not in known_users:
 
-print(f"Welcome {user}!")
 
+print(f"Welcome to your checkbook application, {user}!")
+
+choice = 0
+
+while choice != 4:
+    print("1) View Current Balance")
+    print("2) Make New Debit (withdraw)")
+    print("3) Make New Credit (deposit)")
+    print("4) Exit")
+
+    choice = input("What would you like to do? ")
+    if choice == '4':
+        break
+        # if choice == '4':
+        # print("good bye")
 
 
 
