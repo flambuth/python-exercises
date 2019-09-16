@@ -7,11 +7,14 @@
 
 #gonna need to make persistent saves to disk
 import os
+import checkbook_functions
 
 #Will save to a file per each user
-known_users = []
+known_users = [
+{'name':'aone', 'balance':1000}    
+]
 user = input("Please enter your username: ")
-if user not in known_users:
+check_user(user,known_users)
 
 
 print(f"Welcome to your checkbook application, {user}!")
