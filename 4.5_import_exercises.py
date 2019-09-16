@@ -31,6 +31,7 @@ double_letter_combo = list(combinations(letters, 2))
 ##The JSON stuff
 import json
 
+#the default paramater for the mode is r. The r here is redundant
 with open("profiles.json", "r") as read_file:
     data = json.load(read_file)
 
@@ -50,10 +51,7 @@ def find_inactive_users(data):
     return active_users
 
 # Grand total of balances for all users
-def find_sum_of_user_balances(data):
-    x = [i['balance'] for i in data]
 
-# Average balance per user
 #This strips off the commas betweeen 3 digits and gets rid of the $
 #Then i can add the floats
 def convert_dollar_to_float(dollars):
@@ -67,6 +65,12 @@ def find_sum_of_balances(data):
     sum_of_balances = sum(list(map(convert_dollar_to_float, x)))
     return sum_of_balances
 
+# Average balance per user
+def find_avg_of_balances(data):
+    x = [i['balance'] for i in data]
+    avg_of_balances = sum(list(map(convert_dollar_to_float, x)))/len(x)
+    return avg_of_balances
+
 # User with the lowest balance
 #This returns the balance. Which is the min values of a list comprehension that pulled
 #from the balance field of each list member of data
@@ -75,10 +79,49 @@ def user_with_lowest(data):
     lowest_balance = min(list(map(convert_dollar_to_float, x)))
     return lowest_balance
 
-#returns a tuple with name and the wacky string balance
-eggs = [(i['name'],i['balance']) for i in data]
+def user_with_highest(data):
+    x = [i['balance'] for i in data]
+    highest_balance = max(list(map(convert_dollar_to_float, x)))
+    return highest_balance
+
+#list comprehension that filters out everythign except the lowest balance found in the earlier
+#funciton
+low_balance_user = [(i['name'],i['balance']) for i in data if convert_dollar_to_float(i['balance']) == user_with_lowest(data)] 
+
+#I pulled this from stack overflow when I was trying to sort by the second element
+# of a tuple within a lit of tuples
+
+#sorts that list ot tuples madde in 
+def Sort_Tuple(tup):  
+      # getting length of list of tuples 
+    lst = len(tup)  
+    for i in range(0, lst):  
+          
+        for j in range(0, lst-i-1):  
+            if (tup[j][1] > tup[j + 1][1]):  
+                temp = tup[j]  
+                tup[j]= tup[j + 1]  
+                tup[j + 1]= temp  
+    return tup
+
+Sort_Tuple(names_with_balances[0])
 
 # User with the highest balance
+Sort_Tuple(names_with_balances[-1])
+high_balance_user = [(i['name'],i['balance']) for i in data if convert_dollar_to_float(i['balance']) == user_with_highest(data)] 
+
+
 # Most common favorite fruit
+#crude iteration of each value of the favFruit key in each list member of data var
+from collections import Counter
+
+fav_fruits = [i['favoriteFruit'] for i in data]
+Counter(fav_fruits)
+fruit_count = dict(Counter(fav_fruits))
+for key, value in sorted(fruit_count.items(), key=lambda kv: kv[1], reverse=True): 
+    print("%s: %s" % (key, value))
 # Least most common favorite fruit
+for key, value in sorted(fruit_count.items(), key=lambda kv: kv[1], reverse=False): 
+    print("%s: %s" % (key, value))
+
 # Total number of unread messages for all users
