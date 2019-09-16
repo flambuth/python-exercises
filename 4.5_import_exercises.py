@@ -68,8 +68,16 @@ def find_sum_of_balances(data):
     return sum_of_balances
 
 # User with the lowest balance
+#This returns the balance. Which is the min values of a list comprehension that pulled
+#from the balance field of each list member of data
 def user_with_lowest(data):
-    
+    x = [i['balance'] for i in data]
+    lowest_balance = min(list(map(convert_dollar_to_float, x)))
+    return lowest_balance
+
+#returns a tuple with name and the wacky string balance
+eggs = [(i['name'],i['balance']) for i in data]
+
 # User with the highest balance
 # Most common favorite fruit
 # Least most common favorite fruit
