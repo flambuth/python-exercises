@@ -15,3 +15,21 @@ import functions_exercise as fe
 
 from functions_exercise import cumsum
 
+from itertools import combinations
+
+numbers = [1,2,3]
+letters = 'abc'
+
+#makes a list of every 2 character combo from abc and 123.
+combos = list(combinations(list(letters) + numbers, 2))
+
+#gets rid of double letters or double numbers
+x = [i for i in combos if type(i[0]) != type(i[1])] 
+
+double_letter_combo = list(combinations(letters, 2))
+
+##The JSON stuff
+import json
+
+with open("profiles.json", "r") as read_file:
+    data = json.load(read_file)
