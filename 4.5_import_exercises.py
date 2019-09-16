@@ -60,6 +60,10 @@ def convert_dollar_to_float(dollars):
     s = s.join(new_dollars[1:])
     return float(s)
 
+#How the instructor gets rid of $ and ,
+def handle_balance(s):
+    float(s[1:].replace(',', ''))
+
 def find_sum_of_balances(data):
     x = [i['balance'] for i in data]
     sum_of_balances = sum(list(map(convert_dollar_to_float, x)))
@@ -115,13 +119,15 @@ high_balance_user = [(i['name'],i['balance']) for i in data if convert_dollar_to
 #crude iteration of each value of the favFruit key in each list member of data var
 from collections import Counter
 
-fav_fruits = [i['favoriteFruit'] for i in data]
-Counter(fav_fruits)
-fruit_count = dict(Counter(fav_fruits))
-for key, value in sorted(fruit_count.items(), key=lambda kv: kv[1], reverse=True): 
-    print("%s: %s" % (key, value))
+fav_fruits = Counter([i['favoriteFruit'] for i in data])
+fruit_count = dict(fav_fruits)
+fruit_winner = max(fruit_count.items())
+
 # Least most common favorite fruit
-for key, value in sorted(fruit_count.items(), key=lambda kv: kv[1], reverse=False): 
-    print("%s: %s" % (key, value))
+fruit_loser = min(fruit_count.items())
+
+#the super elegant way the instructor showed
+#Counter(i['favoriteFruit'] for i in data)
+#^I did that. How'd i forget? either wway its in line 122. i couldve put 122 and 123 together
 
 # Total number of unread messages for all users
