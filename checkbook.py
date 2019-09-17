@@ -8,8 +8,8 @@ import json
 # f.close() 
 json_file = 'customers.json'
 
-with open(json_file, "r") as read_file: 
-    customers = json.load(read_file)
+with open(json_file, "r") as f: 
+    customers = json.load(f)
 # the bank of users for testing. 2 dicts in a list
 # customers = [
 # {'name':'aone', 'balance':1000},    
@@ -123,3 +123,7 @@ while loop:          ## While loop which will keep going until loop = False
     else:
         # Any integer inputs other than values 1-5 we print an error message
         print("Wrong option selection. Enter any key to try again..")
+
+#save the changes
+with open('customers.json', 'w') as f:  
+    json.dump(customers, f)

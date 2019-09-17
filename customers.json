@@ -1,4 +1,1 @@
-[
-{"name":"aone", "balance":1000},    
-{"name":"btwo", "balance":500}
-]
+[{"name": "aone", "balance": 1500}, {"name": "btwo", "balance": 500}, {"name": "jsmith", "balance": 777}]
