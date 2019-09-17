@@ -1,18 +1,20 @@
 #!/usr/local/anaconda3/bin/python
-
+import json
 #makes the customers.csv
 # f = open("customers.csv", "w")                                  
 # writer = csv.DictWriter(f, fieldnames=["name", "balance"])      
 # writer.writeheader()                                            
 # writer.writerows(customers)                                     
 # f.close() 
+json_file = 'customers.json'
 
-
+with open(json_file, "r") as read_file: 
+    customers = json.load(read_file)
 # the bank of users for testing. 2 dicts in a list
-customers = [
-{'name':'aone', 'balance':1000},    
-{'name':'btwo', 'balance':500}
-]
+# customers = [
+# {'name':'aone', 'balance':1000},    
+# {'name':'btwo', 'balance':500}
+# ]
 
 def check_user(user):
     user_names = [i['name'] for i in customers]
@@ -81,6 +83,7 @@ else:
 
 
 while loop:          ## While loop which will keep going until loop = False
+    #test to see if account is in arrears 
     for i in customers:
         if i['balance'] < 1 and i['name'] == current_user:
             print ("Please deposit more money before using the withdrawal function. ".upper())
