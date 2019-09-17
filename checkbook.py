@@ -42,6 +42,8 @@ def add_to_balance(user, amount):
     for i in customers: 
         if i['name'] == user: 
             i['balance'] += amount 
+#     I'm gonna have to make this persistent. Maybe add a transactions table structure.
+#     transaction_list.append(amount)
 
 #Will only let you go negative once. Make a big withdrawal and run for it.
 def subtract_from_balance(user, amount):
@@ -51,6 +53,11 @@ def subtract_from_balance(user, amount):
                 print("Your balance is not large enough to support a withdrawal.") 
             else:
                 i['balance'] -= amount
+
+#SKUNKWORKS: lets make a transaction history
+def show_transactions():
+
+
 
 def print_menu():
     print("\n")
@@ -64,7 +71,7 @@ def print_menu():
 
 
 ##############################
-
+transaction_list = []
 
 
 loop=True      
