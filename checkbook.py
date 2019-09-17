@@ -1,68 +1,78 @@
-#When run, the application should welcome the user, and prompt them for 
-# an action to take:
-#   view current balance
-#   add a debit (withdrawal)
-#   add a credit (deposit)
-#   exit
+#lets build a menu
 
-#gonna need to make persistent saves to disk
-import os
-import checkbook_functions
+# print("There will be a menu")
+# print("Below here: ")
 
-#Will save to a file per each user
-known_users = [
-{'name':'aone', 'balance':1000}    
+# the bank of users for testing. 2 dicts in a list
+customers = [
+{'name':'aone', 'balance':1000},    
+{'name':'btwo', 'balance':500}
 ]
+
 def check_user(user, user_list):
     user_names = [i['name'] for i in user_list]
     return user in user_names
 
-def create_new_user(name, balance):
-    known_users.append(
-        {'name':name,
-         'balance': balance
-        }
-    )
+# scaffolding for using sqlite
+# def insert_customer(emp):
+#     with conn:
+#         c.execute("INSERT INTO customers VALUES (:name, :balance)", {'name': emp.first, 'balance': emp.last})
 
-######################
-#######The main script starts below
-choice = 0
-while choice != 4:
-    user = input("Please enter your username: ")
-    if check_user(user,known_users) == False:
-        new_balance = str(input("You are a new user. What is your expected account balance? "))
-        create_new_user(user, new_balance)
 
-    else:
-        print(f"Welcome to your checkbook application, {user}!")
+def see_balance(user, user_list):
+    user_balance = [i['balance'] for i in user_list if i['name'] == user]
+    return user_balance
 
-    print("1) View Current Balance")
-    print("2) Make New Debit (withdraw)")
-    print("3) Make New Credit (deposit)")
-    print("4) Exit")
+def add_to_balance(user, amount):
+    for i in customers: 
+        if i['name'] == user: 
+            i['balance'] += amount 
 
-    choice = input("What would you like to do? ")
-    
-    if choice == '1':
-        print([i['balance'] for i in known_users if i['name'] == user])
-        continue
-    if choice == '4':
+def subtract_from_balance(user, amount):
+    for i in customers: 
+        if i['name'] == user: 
+            i['balance'] -= amount
+
+def print_menu():
+    print( 30 * "-" , "MENU" , 30 * "-")
+    print( "1. View Current Balance")
+    print( "2. Make A Deposit")
+    print( "3. Make A Withdrawal")
+    print( "4. Wish there was a fourth option")
+    print( "5. Exit")
+    print( 67 * "-")
+  
+loop=True      
+
+current_user = input("What is your user name? ")
+if check_user(current_user, known_users):
+    print(" welcome back")
+else:
+    print(" A new user!")
+
+while loop:          ## While loop which will keep going until loop = False
+    print_menu()    ## Displays menu
+    choice = int(input("Enter your choice [1-5]: "))
+     
+    if choice==1:     
+        print("Menu 1 has been selected") 
+        current_balance = see_balance(current_user, customers)
+        print(f"Your current balance is ${str(current_balance)[1:-1]}")
+    elif choice==2:
+        print("Menu 2 has been selected")
+        ## 
+    elif choice==3:
+        print("Menu 3 has been selected")
+        ## 
+    elif choice==4:
+        print("Menu 4 has been selected")
+        print("More features to come!")
+        ## The exit choice to break the while loop
+    elif choice==5:
+        print("Menu 5 has been selected")
         break
-        # if choice == '4':
-        # print("good bye")
 
-
-
-##########
-# Once you have finished the basic application (in no particular order),
-
-# add a menu item that allows the user to view all historical transactions
-# assign categories to each transaction
-# add a menu item to allow the user to view all the transactions in a given category
-# provide the user with summary statistics about the transactions in each category
-# keep track of the date and time that each transaction happened
-# allow the user to view all the transactions for a given day
-# make sure your list of previous transactions includes the timestamp for each
-# allow the user to optionally provide a description for each transaction
-# allow the user to search for keywords in the transaction descriptions, and show all the transactions that match the user's search term
-# allow the user to modify past transactions
+        loop=False # This will make the while loop to end as not value of loop is set to False
+    else:
+        # Any integer inputs other than values 1-5 we print an error message
+        print("Wrong option selection. Enter any key to try again..")

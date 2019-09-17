@@ -21,6 +21,8 @@ numbers = [1,2,3]
 letters = 'abc'
 
 #makes a list of every 2 character combo from abc and 123.
+#the memory efficient thing to do would be to use itertools.chain(list(letters), numbers)
+#then make a list of the combinations from that chain object.
 combos = list(combinations(list(letters) + numbers, 2))
 
 #gets rid of double letters or double numbers
