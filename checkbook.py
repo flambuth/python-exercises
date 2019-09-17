@@ -1,3 +1,4 @@
+#!/usr/local/anaconda3/bin/python
 #lets build a menu
 
 # print("There will be a menu")
@@ -9,9 +10,17 @@ customers = [
 {'name':'btwo', 'balance':500}
 ]
 
-def check_user(user, user_list):
-    user_names = [i['name'] for i in user_list]
+def check_user(user):
+    user_names = [i['name'] for i in customers]
     return user in user_names
+
+def create_user(user):
+    balance = int(input("How much do you have to start your account? "))
+    new_user = {
+        'name': user,
+        'balance' : balance
+    }
+    customers.append(new_user)
 
 # scaffolding for using sqlite
 # def insert_customer(emp):
@@ -28,12 +37,17 @@ def add_to_balance(user, amount):
         if i['name'] == user: 
             i['balance'] += amount 
 
+#I should add a lower bounds check
 def subtract_from_balance(user, amount):
     for i in customers: 
-        if i['name'] == user: 
-            i['balance'] -= amount
+        if i['name'] == user:
+            if i['balance'] < 1:
+                print("Your balance is not large enough to support a withdrawal.") 
+            else:
+                i['balance'] -= amount
 
 def print_menu():
+    print("\n")
     print( 30 * "-" , "MENU" , 30 * "-")
     print( "1. View Current Balance")
     print( "2. Make A Deposit")
@@ -41,14 +55,20 @@ def print_menu():
     print( "4. Wish there was a fourth option")
     print( "5. Exit")
     print( 67 * "-")
-  
+
+
+##############################
+
+
+
 loop=True      
 
 current_user = input("What is your user name? ")
-if check_user(current_user, known_users):
-    print(" welcome back")
+if check_user(current_user):
+    print(f"Welcome back {current_user}")
 else:
     print(" A new user!")
+    create_user(current_user)
 
 while loop:          ## While loop which will keep going until loop = False
     print_menu()    ## Displays menu
@@ -60,10 +80,16 @@ while loop:          ## While loop which will keep going until loop = False
         print(f"Your current balance is ${str(current_balance)[1:-1]}")
     elif choice==2:
         print("Menu 2 has been selected")
-        ## 
+        amount = int(input("How much are you depositing to your account? "))
+        add_to_balance(current_user, amount)
+        current_balance = see_balance(current_user, customers)
+        print(f"Your current balance is ${str(current_balance)[1:-1]}")
     elif choice==3:
         print("Menu 3 has been selected")
-        ## 
+        amount = int(input("How much are you withdrawing from your account? "))
+        subtract_from_balance(current_user, amount)
+        current_balance = see_balance(current_user, customers)
+        print(f"Your current balance is ${str(current_balance)[1:-1]}")
     elif choice==4:
         print("Menu 4 has been selected")
         print("More features to come!")
