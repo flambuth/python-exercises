@@ -52,7 +52,7 @@ def subtract_from_balance(user, amount):
                 i['balance'] -= amount
 
 #SKUNKWORKS: lets make a transaction history
-def show_transactions():
+#def show_transactions():
 
 
 
@@ -62,8 +62,7 @@ def print_menu():
     print( "1. View Current Balance")
     print( "2. Make A Deposit")
     print( "3. Make A Withdrawal")
-    print( "4. Wish there was a fourth option")
-    print( "5. Exit")
+    print( "4. Exit")
     print( 67 * "-")
 
 
@@ -94,7 +93,7 @@ while loop:          ## While loop which will keep going until loop = False
             break
     
     print_menu()    ## Displays menu
-    choice = int(input("Enter your choice [1-5]: "))
+    choice = int(input("Enter your choice [1-4]: "))
      
     if choice==1:     
         print("Menu 1 has been selected") 
@@ -115,12 +114,13 @@ while loop:          ## While loop which will keep going until loop = False
         current_balance = see_balance(current_user, customers)
         print(f"Your current balance is ${str(current_balance)[1:-1]}")
     
+    # elif choice==4:
+    #     print("Menu 4 has been selected")
+    #     print("More features to come!")
+        ## The exit choice to break the while loop
     elif choice==4:
         print("Menu 4 has been selected")
-        print("More features to come!")
-        ## The exit choice to break the while loop
-    elif choice==5:
-        print("Menu 5 has been selected")
+        print("Good bye")
         break
 
         loop=False # This will make the while loop to end as not value of loop is set to False
