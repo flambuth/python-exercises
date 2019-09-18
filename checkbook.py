@@ -1,11 +1,8 @@
 #!/usr/local/anaconda3/bin/python
 import json
-#makes the customers.csv
-# f = open("customers.csv", "w")                                  
-# writer = csv.DictWriter(f, fieldnames=["name", "balance"])      
-# writer.writeheader()                                            
-# writer.writerows(customers)                                     
-# f.close() 
+
+#there should be a json file in the same directory as this py file with the JSON representation
+#of the dictionary loaded a few lines down.
 json_file = 'customers.json'
 
 with open(json_file, "r") as f: 
