@@ -1,4 +1,5 @@
 #numpy is fast, from what they tell me
+import numpy as np
 
 a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])
 
@@ -15,6 +16,7 @@ a[is_positive_mask]
 
 # 3
 # How many even positive numbers are there?
+is_even_mask = a%2==0
 a[is_even_mask & is_positive_mask]
 
 # 4
@@ -75,26 +77,38 @@ b = [
     [6, 7, 8]
 ]
 
-# Exercise 1 - refactor the following to use numpy. Use sum_of_b as the variable. **Hint, you'll first need to make sure that the "b" variable is a numpy array**
+b = np.array(b)
+
+# Exercise 1 - refactor the following to use numpy. Use sum_of_b as the variable. **Hint, you'll first need to make 
+# sure that the "b" variable is a numpy array**
 sum_of_b = 0
 for row in b:
     sum_of_b += sum(row)
 
+sum_of_b = b.sum()
+
 # Exercise 2 - refactor the following to use numpy. 
 min_of_b = min(b[0]) if min(b[0]) <= min(b[1]) else min(b[1])  
+
+min_of_b = np.min(b)
 
 # Exercise 3 - refactor the following maximum calculation to find the answer with numpy.
 max_of_b = max(b[0]) if max(b[0]) >= max(b[1]) else max(b[1])
 
+max_of_b = np.max(b)
 
 # Exercise 4 - refactor the following using numpy to find the mean of b
 mean_of_b = (sum(b[0]) + sum(b[1])) / (len([b[0]]) + len(b[1]))
+
+mean_of_b = b.mean()
 
 # Exercise 5 - refactor the following to use numpy for calculating the product of all numbers multiplied together.
 product_of_b = 1
 for row in b:
     for number in row:
         product_of_b *= number
+
+product_of_b = np.prod(b)
 
 # Exercise 6 - refactor the following to use numpy to find the list of squares 
 squares_of_b = []
