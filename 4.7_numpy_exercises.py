@@ -7,22 +7,22 @@ a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])
 # 1
 # How many negative numbers are there?
 is_negative_mask = a < 0
-a[is_negative_mask]
+len(a[is_negative_mask])
 
 # 2
 # How many positive numbers are there?
 is_positive_mask = a > 0 
-a[is_positive_mask]
+len(a[is_positive_mask])
 
 # 3
 # How many even positive numbers are there?
 is_even_mask = a%2==0
-a[is_even_mask & is_positive_mask]
+len(a[is_even_mask & is_positive_mask])
 
 # 4
 # If you were to add 3 to each data point, how many positive numbers would there be?
 b = a+3
-b[b>0]
+len(b[b>0])
 
 # 5
 # If you squared each number, what would the new mean and standard deviation be?
