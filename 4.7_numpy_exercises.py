@@ -116,6 +116,7 @@ for row in b:
     for number in row:
         squares_of_b.append(number**2)
 
+squares_of_b = b**2
 
 # Exercise 7 - refactor using numpy to determine the odds_in_b
 odds_in_b = []
@@ -124,6 +125,7 @@ for row in b:
         if(number % 2 != 0):
             odds_in_b.append(number)
 
+odds_in_b = b[b%2==1]
 
 # Exercise 8 - refactor the following to use numpy to filter only the even numbers
 evens_in_b = []
@@ -132,13 +134,21 @@ for row in b:
         if(number % 2 == 0):
             evens_in_b.append(number)
 
+evens_in_b = b[b%2==0]
+
 # Exercise 9 - print out the shape of the array b.
+b.shape()
+
 
 # Exercise 10 - transpose the array b.
+b.transpose()
 
 # Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
+b.reshape(1,6)
 
 # Exercise 12 - reshape the array b to be a list of 6 lists, each containing only 1 number (6 x 1)
+b.reshape(6,1)
+
 
 ## Setup 3
 c = [
@@ -147,23 +157,36 @@ c = [
     [7, 8, 9]
 ]
 
+c = np.array(c)
+
 # HINT, you'll first need to make sure that the "c" variable is a numpy array prior to using numpy array methods.
 # Exercise 1 - Find the min, max, sum, and product of c.
+c.min()
+c.max()
+c.sum()
+np.prod(c)
 
 # Exercise 2 - Determine the standard deviation of c.
+c.std()
 
 # Exercise 3 - Determine the variance of c.
+c.var()
 
 # Exercise 4 - Print out the shape of the array c
+c.shape()
 
 # Exercise 5 - Transpose c and print out transposed result.
+c_trans = c.transpose()
+print(c_trans)
 
 # Exercise 6 - Multiply c by the c-Transposed and print the result.
+print(c * c_trans)
 
 # Exercise 7 - Write the code necessary to sum up the result of c times c transposed. Answer should be 261
+(c_trans * c).sum()
 
 # Exercise 8 - Write the code necessary to determine the product of c times c transposed. Answer should be 131681894400.
-
+np.prod(c_trans * c)
 
 ## Setup 4
 d = [
@@ -172,22 +195,32 @@ d = [
     [60, 45, -45, 90, -45, 180]
 ]
 
+d = np.array(d)
 # Exercise 1 - Find the sine of all the numbers in d
+np.sin(d)
 
 # Exercise 2 - Find the cosine of all the numbers in d
+np.cos(d)
 
 # Exercise 3 - Find the tangent of all the numbers in d
+np.tan(d)
 
 # Exercise 4 - Find all the negative numbers in d
+d[d<0]
 
 # Exercise 5 - Find all the positive numbers in d
+d[d>0]
 
 # Exercise 6 - Return an array of only the unique numbers in d.
+np.unique(d)
 
 # Exercise 7 - Determine how many unique numbers there are in d.
-
+len(np.unique(d))
 # Exercise 8 - Print out the shape of d.
+d.shape()
 
 # Exercise 9 - Transpose and then print out the shape of d.
+np.shape(d.transpose())
 
 # Exercise 10 - Reshape d into an array of 9 x 2
+d.reshape(9,2)
