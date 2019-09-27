@@ -5,6 +5,18 @@ import numpy as np
 from pydataset import data
 from env import host, user, password
 
+#2 is gonna want these two little DFs
+users = pd.DataFrame({
+    'id': [1, 2, 3, 4, 5, 6],
+    'name': ['bob', 'joe', 'sally', 'adam', 'jane', 'mike'],
+    'role_id': [1, 2, 3, 3, np.nan, np.nan]
+})
+
+roles = pd.DataFrame({
+    'id': [1, 2, 3, 4],
+    'name': ['admin', 'author', 'reviewer', 'commenter']
+})
+
 #3 is gonna ask for the employees database, so I'll hardcode that here.
 db = 'employees'
 
@@ -81,8 +93,26 @@ print(f"{abs(auto_trans['mean'].agg('mean') - man_trans['mean'].agg('mean'))} do
 #                       Joining and Merging
 # 2
 # Copy the users and roles dataframes from the examples above. 
+pd.merge( 
+    users.rename(columns={'id': 'user_id', 'name': 'username'}), 
+    roles.rename(columns={'name': 'role_name'}), 
+    left_on='role_id', right_on='id', how='left') 
+
 # What do you think a right join would look like? 
+# If there is a role that has no users, then there's gonna be row with NaNs on the left
+# Cuz all of the right is getting displayed
+pd.merge( 
+    users.rename(columns={'id': 'user_id', 'name': 'username'}), 
+    roles.rename(columns={'name': 'role_name'}), 
+    left_on='role_id', right_on='id', how='right') 
+
 # An outer join? 
+# There will be NaN
+pd.merge( 
+    users.rename(columns={'id': 'user_id', 'name': 'username'}), 
+    roles.rename(columns={'name': 'role_name'}), 
+    left_on='role_id', right_on='id', how='right')
+
 # What happens if you drop the foreign keys from the dataframes and try to merge them?
 
 
@@ -91,8 +121,12 @@ print(f"{abs(auto_trans['mean'].agg('mean') - man_trans['mean'].agg('mean'))} do
 # 3
 # Create a function named get_db_url. It should accept a username, hostname, password, and 
 # database name and return a url formatted like in the examples in this lesson.
+print("The function is defined at the top of this script. ")
+
 
 # Use your function to obtain a connection to the employees database.
+get_db_url(user, host, password, db)
+
 # Once you have successfully run a query:
 #   Intentionally make a typo in the database url. What kind of error message do you see?
 
@@ -112,7 +146,12 @@ print(f"{abs(auto_trans['mean'].agg('mean') - man_trans['mean'].agg('mean'))} do
 # Write the code necessary to create a cross tabulation of the number of titles by department. 
 # (Hint: this will involve a combination of SQL and python/pandas code)
 
+###########################################
+#                       Getting data from SQL data 
+# 4
+# Use your get_db_url function to help you explore the data from the chipotle database. 
+# Use the data to answer the following questions:
 
-#Don't forget to change your db. 
-df = pd.read_sql('SELECT * FROM employees , url)
-print(df)
+# What is the total price for each order?
+# What are the most popular 3 items?
+# Which item has produced the most revenue?
