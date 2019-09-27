@@ -173,7 +173,7 @@ titles_df = pd.read_sql('SELECT * FROM titles', url)
 #this is the count of unique emp_no's with each group found in the title column
 emp_titles_count = titles_df.groupby('title').emp_no.count()
 #Managers are so few that I ought to change the Y axis so it can not look like a zero count.
-emp_titles_count.plot.bar()
+emp_titles_count.plot.bar(x='title', y='number of titles per dept')
 
 # 3
 # Join the employees and titles dataframes together.
