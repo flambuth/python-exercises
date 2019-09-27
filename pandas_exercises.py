@@ -23,6 +23,15 @@ db = 'employees'
 def get_db_url(username, hostname, password, database):
     url = f'mysql+pymysql://{username}:{password}@{hostname}/{database}'
     return url
+
+def remove_commas_and_dollarsign(string_num):  
+    """ 
+    Cleans off a starting $ and commas where-ever they are. Takes a string, returns a string 
+    """ 
+    
+    x = string_num.replace(',','')  
+    x = x.strip("$")  
+    return x  
 ######################
 #####the main script!
 
@@ -49,7 +58,7 @@ mpg.groupby('manufacturer').mileage.agg(['min', 'mean', 'max']).sort_values(by='
 #This groups them by model so that only one column is displayed.
 #The count for each group is the same for each column. mpg.groupby('manufacturer').count()
 #would show all the columns, where I saw they all had the same count values.
-mpg.groupby('manufacturer').model.count()
+len(mpg.groupby('manufacturer').model.count())
 
 
 ##########
@@ -58,6 +67,11 @@ mpg.groupby('manufacturer').model.count()
 
 # I went with hwy as the field to measure because it was only 3 characters of typing.
 mpg.groupby('model').hwy.count()
+
+# this was the much more elegant way
+mpg.model.nunique()
+# or slightly less elegant
+len(mpg.model.unique())
 
 
 ##########
