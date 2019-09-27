@@ -196,6 +196,11 @@ emps_and_titles.groupby('title').hire_date.agg('max')
 # 3
 # Write the code necessary to create a cross tabulation of the number of titles by department. 
 # (Hint: this will involve a combination of SQL and python/pandas code)
+#merged the dept_emp table onto my alrady merged dataframe
+big_df = pd.merge(emps_and_titles, dept_emp_df, left_on='emp_no', right_on='emp_no', how='inner')
+
+#crosstab the deptno with the count of titles for each deptno
+pd.crosstab(big_df.dept_no, big_df.title, margins=True)
 
 ###########################################
 #
