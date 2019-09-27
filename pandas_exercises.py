@@ -165,17 +165,40 @@ emp_titles_count.plot.bar()
 # Join the employees and titles dataframes together.
 emps_and_titles = pd.merge(emps_df, titles_df, left_on='emp_no', right_on='emp_no', how='inner')
 
-
+# 3
 # Visualize how frequently employees change titles.
 
+#This is the count of current employees. So this minus the total is the records of 
+#former employee positions that are also in this value down here.
+emps_and_titles.groupby('to_date').emp_no.count().tail(1)
+
+#Minused the to_date from the from_date. Pandas turned them into datetime objects
+#so the answer is in days. Gonna skim out the onces that equal -2922337.
+title_duration = emps_and_titles['from_date'] - emps_and_titles['to_date']  
+#title_duration is a Series and each element is a datetime.timedelta
+#I'm gonna ask about each ones .days atrribute
+title_duration[0].days
+#list comp of all the values that arenet around 29000
+z = [i.days for i in title_duration if i.days > -2900000]
+z = np.asarray(z)
+z.mean()
+#This was more roundabout then I hoped. That datetime part threw a wrench in my pandas chi.
+
+
+# 3
 # For each title, find the hire date of the employee that was hired most recently with that 
 # title.
 
+#Grouped the title column and showed the max hire_date for each group.
+emps_and_titles.groupby('title').hire_date.agg('max')
+
+
+# 3
 # Write the code necessary to create a cross tabulation of the number of titles by department. 
 # (Hint: this will involve a combination of SQL and python/pandas code)
 
 ###########################################
-#                       Getting data from SQL data 
+#
 # 4
 # Use your get_db_url function to help you explore the data from the chipotle database. 
 # Use the data to answer the following questions:
