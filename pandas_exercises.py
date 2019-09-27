@@ -99,22 +99,28 @@ pd.merge(
     left_on='role_id', right_on='id', how='left') 
 
 # What do you think a right join would look like? 
-# If there is a role that has no users, then there's gonna be row with NaNs on the left
-# Cuz all of the right is getting displayed
+#If there is a role that has no users, then there's gonna be row with NaNs on the left
+#Cuz all of the right is getting displayed
 pd.merge( 
     users.rename(columns={'id': 'user_id', 'name': 'username'}), 
     roles.rename(columns={'name': 'role_name'}), 
     left_on='role_id', right_on='id', how='right') 
 
 # An outer join? 
-# There will be NaN
+#There will be NaN
 pd.merge( 
     users.rename(columns={'id': 'user_id', 'name': 'username'}), 
     roles.rename(columns={'name': 'role_name'}), 
     left_on='role_id', right_on='id', how='right')
 
 # What happens if you drop the foreign keys from the dataframes and try to merge them?
-
+#This gets rid of the role_id in users. 
+no_user_id = users.drop(columns=['role_id'])
+#merge them with roles
+pd.merge(no_user_id, roles, left_on='id', right_on='id', how='outer')
+#Pandas is confused and is assiging the wrong role to adam.
+#Or I don't know how to let Pandas take a guess at merging these two without explicitly
+#naming the join_on rules
 
 ###########################################
 #                       Getting data from SQL data 
