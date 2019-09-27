@@ -203,11 +203,18 @@ big_df = pd.merge(emps_and_titles, dept_emp_df, left_on='emp_no', right_on='emp_
 pd.crosstab(big_df.dept_no, big_df.title, margins=True)
 
 ###########################################
-#
 # 4
 # Use your get_db_url function to help you explore the data from the chipotle database. 
+
+#I used the read table method to just grab the only table in the chipotle db
+chipotle = pd.read_sql_table('orders', url)
+
 # Use the data to answer the following questions:
 
 # What is the total price for each order?
+chipotle['item_price'] = chipotle['item_price'].apply(remove_commas_and_dollarsign)
+chipotle['item_price'] = chipotle['item_price'].apply(float)
+chipotle['quantity'] * chipotle['item_price']
+
 # What are the most popular 3 items?
 # Which item has produced the most revenue?
