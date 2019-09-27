@@ -21,7 +21,7 @@ roles = pd.DataFrame({
 db = 'employees'
 
 def get_db_url(username, hostname, password, database):
-    url = f'mysql+pymysql://{user}:{password}@{host}/{db}'
+    url = f'mysql+pymysql://{username}:{password}@{hostname}/{database}'
     return url
 ######################
 #####the main script!
@@ -129,20 +129,42 @@ pd.merge(no_user_id, roles, left_on='id', right_on='id', how='outer')
 # database name and return a url formatted like in the examples in this lesson.
 print("The function is defined at the top of this script. ")
 
-
+# 3
 # Use your function to obtain a connection to the employees database.
-get_db_url(user, host, password, db)
+url = get_db_url(user, host, password, db)
+emps_df = pd.read_sql('SELECT * FROM employees', url)
 
+# 3
 # Once you have successfully run a query:
-#   Intentionally make a typo in the database url. What kind of error message do you see?
+# Intentionally make a typo in the database url. What kind of error message do you see?
+bad_url = "8.8.8.8"
+url = get_db_url(user, bad_url, password, db)
+emps_df = pd.read_sql('SELECT * FROM employees', url)
+#   "Can't connect to MySQL server on '8.8.8.8' (timed out)")
 
-#   Intentionally make an error in your SQL query. What does the error message look like?
+# 3
+# Intentionally make an error in your SQL query. What does the error message look like?
+url = get_db_url(user, host, password, db)
+emps_df = pd.read_sql('SELECT zebras FROM employees', url)
+#(pymysql.err.InternalError) (1054, "Unknown column 'zebras' in 'field list'")
 
+# 3
 # Read the employees and titles tables into two separate dataframes
+titles_df = pd.read_sql('SELECT * FROM titles', url)
 
+###############
+# 3
 # Visualize the number of employees with each title.
 
+#this is the count of unique emp_no's with each group found in the title column
+emp_titles_count = titles_df.groupby('title').emp_no.count()
+#Managers are so few that I ought to change the Y axis so it can not look like a zero count.
+emp_titles_count.plot.bar()
+
+# 3
 # Join the employees and titles dataframes together.
+emps_and_titles = pd.merge(emps_df, titles_df, left_on='emp_no', right_on='emp_no', how='inner')
+
 
 # Visualize how frequently employees change titles.
 
