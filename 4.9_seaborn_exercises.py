@@ -94,15 +94,23 @@ chipotle['item_price'] = chipotle.item_price.apply(remove_commas_and_dollarsign)
 chipotle['total_order'] = chipotle.item_price * chipotle.quantity
 
 
-#makes a series of each group of item_names and has their id count as the values
-item_freq = chipotle.groupby('item_name').id.agg("count")
+#makes a new DF of each group of item_names and has their total summed up and counted
+item_freq = chipotle.groupby('item_name').total_order.agg(['sum','count'])
 #sorts and skims off the top5 most frequently ordered items
 top5 = item_freq.sort_values(ascending=False).head()
 
 #makes a bar plot
-sns.barplot(x=top5.index, y=top5.values)
+sns.barplot(x=top5.index, y="count", data=top5)
+
+#Im moving on. I cant find out how to add label each bar with the revenue.
+#Or how to make the names oriented vertically, or even the damn bars
+
 
 # 4
 # Load the sleepstudy data and read it's documentation. Use seaborn to create a line chart 
 # of all the individual subject's reaction times and a more prominant line showing the 
 # average change in reaction time.
+sleep = pd.read_csv('sleep.csv')
+
+#how do I add a third line? the average line?
+sns.lineplot(x="ID", y="extra", hue="group", data=sleep)
