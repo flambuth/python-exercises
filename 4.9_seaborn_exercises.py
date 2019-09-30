@@ -18,5 +18,9 @@ iris = sns.load_dataset('iris')
 
 
 # Is there a correlation between petal length and petal width?
+sns.relplot(x='petal_length', y='petal_width', data=iris)
+
 # Would it be reasonable to predict species based on sepal width and sepal length?
+sns.relplot(x='sepal_length', y='sepal_width', columns='species' ,data=iris)
+
 # Which features would be best used to predict species?
