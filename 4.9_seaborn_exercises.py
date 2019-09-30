@@ -14,8 +14,8 @@ iris = sns.load_dataset('iris')
 
 
 # What does the distribution of petal lengths look like?
-
-
+sns.boxplot(data=iris, y = 'petal_length')
+sns.distplot(tips.total_bill)
 
 # Is there a correlation between petal length and petal width?
 sns.relplot(x='petal_length', y='petal_width', data=iris)
