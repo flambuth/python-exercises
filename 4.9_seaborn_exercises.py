@@ -24,3 +24,21 @@ sns.relplot(x='petal_length', y='petal_width', data=iris)
 sns.relplot(x='sepal_length', y='sepal_width', columns='species' ,data=iris)
 
 # Which features would be best used to predict species?
+sns.relplot(x='petal_length', y='petal_width', col='species' ,
+            hue='species', data=iris)
+#The data is much more tightly clustered together when plotting the petal measurements.            
+
+
+# 1
+# Using the lesson as an example, use seaborn's load_dataset function to load the anscombe 
+# data set. Use pandas to group the data by the dataset column, and calculate summary 
+# statistics for each dataset. What do you notice?
+anscombe = sns.load_dataset('anscombe')
+anscombe.groupby('dataset').x.agg(['min','mean','max'])
+anscombe.groupby('dataset').y.agg(['min','mean','max'])
+#They have very similar summary statistics. Especially at the mean.
+sns.relplot(x='x', y='y', col='dataset',hue='dataset', data=anscombe)
+
+
+# Load the InsectSprays dataset and read it's documentation. Create a boxplot that 
+# shows the effectiveness of the different insect sprays.
