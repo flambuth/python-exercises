@@ -79,7 +79,7 @@ sns.boxplot(x='is_Catholic', y='Fertility', data=swiss)
 
 
 # What measure correlates most strongly with fertility?
-sns.relplot(x='Education', y='Fertility', data=swiss)
+sns.relplot(x='Education', y='Fertility', hue='is_Catholic', data=swiss)
 
 # 3
 # Using the chipotle dataset from the previous exercise, create a bar chart that shows the 4 
@@ -100,17 +100,21 @@ item_freq = chipotle.groupby('item_name').total_order.agg(['sum','count'])
 top5 = item_freq.sort_values(ascending=False).head()
 
 #makes a bar plot
-sns.barplot(x=top5.index, y="count", data=top5)
+sns.barplot(x=top5.item_name, y="count", data=top5)
+
+#I couldnt orient the text 90s, so I just rotated the x and y axis.
+sns.barplot(x="sum", y=top5.item_name, data=top5)
 
 #Im moving on. I cant find out how to add label each bar with the revenue.
-#Or how to make the names oriented vertically, or even the damn bars
-
 
 # 4
 # Load the sleepstudy data and read it's documentation. Use seaborn to create a line chart 
 # of all the individual subject's reaction times and a more prominant line showing the 
 # average change in reaction time.
 sleep = pd.read_csv('sleep.csv')
+# I think I downloaded the wrong csv. I curled the other ones from:
+#  https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/datasets/
+
 
 #how do I add a third line? the average line?
 sns.lineplot(x="ID", y="extra", hue="group", data=sleep)
