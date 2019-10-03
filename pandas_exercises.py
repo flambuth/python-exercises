@@ -120,10 +120,10 @@ pd.merge(
     roles.rename(columns={'name': 'role_name'}), 
     left_on='role_id', right_on='id', how='right') 
 
-# An outer join? 
-#There will be NaN
+# An aN
 pd.merge( 
-    users.rename(columns={'id': 'user_id', 'name': 'username'}), 
+    users.rename(colouter join? 
+#There will be Numns={'id': 'user_id', 'name': 'username'}), 
     roles.rename(columns={'name': 'role_name'}), 
     left_on='role_id', right_on='id', how='right')
 
